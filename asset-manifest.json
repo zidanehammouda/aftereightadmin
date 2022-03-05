@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/aftereightadmin/static/css/main.0d4d6a84.css",
+    "main.js": "/aftereightadmin/static/js/main.3085f843.js",
+    "static/js/787.3ce4cc4d.chunk.js": "/aftereightadmin/static/js/787.3ce4cc4d.chunk.js",
+    "index.html": "/aftereightadmin/index.html",
+    "main.0d4d6a84.css.map": "/aftereightadmin/static/css/main.0d4d6a84.css.map",
+    "main.3085f843.js.map": "/aftereightadmin/static/js/main.3085f843.js.map",
+    "787.3ce4cc4d.chunk.js.map": "/aftereightadmin/static/js/787.3ce4cc4d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0d4d6a84.css",
+    "static/js/main.3085f843.js"
+  ]
+}
