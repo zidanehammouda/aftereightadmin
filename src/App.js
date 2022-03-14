@@ -10,8 +10,8 @@ function App() {
     <Router>
       <Navbar/>
       <Routes>
-        <Route exact path="/" element={<Categories/>}/>
-        <Route path="/editarticles" element={<Articles/>}/>
+        <Route exact path="/aftereightadmin" element={<Categories/>}/>
+        <Route path="/aftereightadmin/editarticles" element={<Articles/>}/>
       </Routes>
     </Router>
   );

@@ -45,7 +45,7 @@ useEffect(()=>{
           <td>{element.name}</td>
           <td><img  width ="80px" height ="80px" style={{objectFit: "cover"}} src={element.image_url}  alt={element.name}/></td>
           <td>
-            <Link to='/editarticles' state={{category: element}}>
+            <Link to='/aftereightadmin/editarticles' state={{category: element}}>
               <MDBIcon style={{marginRight: '20px',color: 'grey'}} fas icon="edit" size='lg'/>
             </Link>
             <MDBIcon style={{color: 'grey'}} fas icon="trash  " size='lg' type="submit" onClick={()=>(deleteCategory(element._id))} />

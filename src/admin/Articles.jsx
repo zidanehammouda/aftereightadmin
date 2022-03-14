@@ -36,7 +36,7 @@ const Articles = () => {
         {articles: Articles,name: name, image_url: image_url})
             .then(response => console.log(response))
             .catch(error => console.log(error))
-            .then(setTimeout(()=>navigate("/"),1000))
+            .then(setTimeout(()=>navigate("/aftereightadmin"),1000))
     )
 
     const AddNewArticle = ()=>
@@ -66,10 +66,9 @@ const Articles = () => {
         </div>
         <div style={styles.right} className='right'>
             <div className="header" style={styles.header}>
-                <Link to="/">
-                <MDBBtn style={{marginRight: '20px'}} type="submit" floating size='lg' tag='a'>
+                <MDBBtn style={{marginRight: '20px'}} type="submit" floating size='lg' tag='a' onClick={()=>navigate("/aftereightadmin")}>
                     <MDBIcon fas icon="caret-left" />
-                </MDBBtn></Link>
+                </MDBBtn>
                 <MDBBtn  type="submit" onClick={AddNewArticle}>Add</MDBBtn>
             </div>
             
@@ -79,6 +78,7 @@ const Articles = () => {
             <th scope='col' width="30%">Article</th>
             <th scope='col' width="50%" >Description</th>
             <th scope='col'>Price</th>
+            <th scope='col'>Image</th>
             <th scope='col'></th>
             </tr>
         </MDBTableHead>
@@ -96,6 +96,11 @@ const Articles = () => {
                 <td>
                     <input style={styles.input} type="number" id="price" name ="price" value = { element.price || '' } onChange={updateFieldChanged(index)}/>
                 </td>
+
+                <td>
+                    <input style={styles.input} type="text" id="image" name ="image" value = { element.image || '' } onChange={updateFieldChanged(index)}/>
+                </td>
+
                 <td>
                 <MDBIcon type= 'submit' fas icon="trash" onClick={()=>(deleteArticle(index))}/>  
                 </td>
@@ -116,8 +121,9 @@ const Articles = () => {
 const styles = {
     container : {
         display: 'flex',
-        flexDirection: 'row',
-        width: '90%'
+        flexDirection: 'column',
+        width: '90%',
+        alignItems: 'center'
     },
     right: {
         display: 'flex',
