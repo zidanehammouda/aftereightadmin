@@ -20,7 +20,7 @@ const Login = () => {
       <MDBSpinner role="status" />;
       return;
     }
-    if (user) navigate("/aftereightadmin");
+    if (user) navigate("/");
   }, [user, loading]);
 
   return (

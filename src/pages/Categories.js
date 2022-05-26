@@ -19,7 +19,7 @@ export default function Categories() {
 
   useEffect(() => {
     if (loading) return;
-    if (!user) return navigate("/");
+    if (!user) return navigate("/login");
   }, [user, loading]);
 
   const fetchData = async () => {

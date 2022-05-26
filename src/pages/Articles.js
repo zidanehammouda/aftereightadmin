@@ -64,7 +64,7 @@ const Articles = () => {
       })
       .then((response) => console.log(response))
       .catch((error) => console.log(error))
-      .then(setTimeout(() => navigate("/aftereightadmin"), 1000));
+      .then(setTimeout(() => navigate("/"), 1000));
 
   const AddNewArticle = () => {
     setArticles((prev) => [...prev, {}]);
@@ -116,7 +116,7 @@ const Articles = () => {
               floating
               size="lg"
               tag="a"
-              onClick={() => navigate("/aftereightadmin")}
+              onClick={() => navigate("/")}
             >
               <MDBIcon fas icon="caret-left" />
             </MDBBtn>

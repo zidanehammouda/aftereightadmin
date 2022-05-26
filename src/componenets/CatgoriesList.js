@@ -29,7 +29,7 @@ const CatgoriesList = (props) => {
                 />
               </td>
               <td>
-                <Link to="editarticles" state={{ category: element }}>
+                <Link to="/editarticles" state={{ category: element }}>
                   <MDBIcon
                     style={{ marginRight: "20px", color: "grey" }}
                     fas
