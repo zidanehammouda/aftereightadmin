@@ -37,6 +37,15 @@ const Articles = () => {
     return () => {};
   }, []);
 
+  const handleSort = () => {
+    const duplicateArticles = Articles;
+    duplicateArticles.sort((a, b) => {
+      return a.price - b.price;
+    });
+    setArticles(() => [...duplicateArticles]);
+    console.log(Articles);
+  };
+
   const handleChangeName = ({ target }) => {
     const { value } = target;
     setName(value);
@@ -76,6 +85,30 @@ const Articles = () => {
     let newArr = [...Articles];
     newArr.splice(index, 1);
     setArticles(newArr);
+  };
+
+  const MoveArticleUp = (index) => {
+    if (index !== 0) {
+      let newArticles = Articles;
+      let aux = newArticles[index - 1];
+      newArticles[index - 1] = newArticles[index];
+      newArticles[index] = aux;
+      console.log("Done moving Up");
+      console.log(Articles);
+      setArticles(() => [...newArticles]);
+    }
+  };
+
+  const MoveArticleDown = (index) => {
+    if (index !== Articles.length - 1) {
+      let newArticles = Articles;
+      let aux = newArticles[index + 1];
+      newArticles[index + 1] = newArticles[index];
+      newArticles[index] = aux;
+      console.log("Done moving down");
+      console.log(Articles);
+      setArticles(() => [...newArticles]);
+    }
   };
 
   return (
@@ -120,14 +153,22 @@ const Articles = () => {
             >
               <MDBIcon fas icon="caret-left" />
             </MDBBtn>
-            <MDBBtn type="submit" onClick={AddNewArticle}>
+            <MDBBtn
+              style={{ marginRight: "20px" }}
+              type="submit"
+              onClick={AddNewArticle}
+            >
               Add
+            </MDBBtn>
+            <MDBBtn color="dark" size="lg" type="submit" onClick={handleSort}>
+              <MDBIcon fas icon="sort-amount-up" />
             </MDBBtn>
           </div>
 
           <MDBTable style={styles.table} hover>
             <MDBTableHead>
               <tr>
+                <th scope="col"></th>
                 <th scope="col" width="30%">
                   Article
                 </th>
@@ -150,6 +191,28 @@ const Articles = () => {
             <MDBTableBody>
               {Articles.map((element, index) => (
                 <tr>
+                  <th className="MoveButtons">
+                    <MDBIcon
+                      id="MoveUpButton"
+                      style={{ color: "blue" }}
+                      fas
+                      icon="caret-up"
+                      size="lg"
+                      onClick={() => MoveArticleUp(index)}
+                      color="secondary"
+                    />
+
+                    <MDBIcon
+                      id="MoveDownButton"
+                      onClick={() => MoveArticleDown(index)}
+                      style={{ color: "blue" }}
+                      fas
+                      icon="caret-down"
+                      color="success"
+                      size="lg"
+                    />
+                  </th>
+
                   <th scope="row">
                     <input
                       style={styles.input}

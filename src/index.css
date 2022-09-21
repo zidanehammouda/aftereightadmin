@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#MoveUpButton{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: aqua;
+
+}
+#MoveDownButton {
+  display: flex;
+  text-align: center;
+  align-items: center;
+
+  cursor: pointer;
+}
+/* .MoveButtons {
+  display: none;
+}
+
+tr:hover .MoveButtons {
+  display: block;
+}  */
