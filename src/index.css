@@ -1,37 +1,107 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+}
+:root {
+    --color-green: #006600;
+    --color-grey: #797979;
+    --color-white: #FFFFFF;
+    --color-black: #222224;
+    --transition: all 400ms ease;
+  }
+
+
+  ::-webkit-scrollbar {
+    display: none;
+
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    overflow: visible;
+  } 
+
+  table {
+    border-collapse: collapse;
+    text-align: center;
+  }
+
+  td, th {
+    text-align: centre;
+    border-bottom: 0.5px solid #dadada;  
+    padding: 20px 4px
+  }
+
+  th {
+    background-color: #0C56D0;
+    color: white  ;
+  }
+tr {
+  transition: var(--transition);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+  tr:hover {
+    background-color: #dadada;
+  }
 
-#MoveUpButton{
-  display: flex;
-  text-align: center;
-  align-items: center;
-  margin-bottom: 10px;
+button {
   cursor: pointer;
-  color: aqua;
-
 }
-#MoveDownButton {
-  display: flex;
-  text-align: center;
-  align-items: center;
 
+.btn {
+  box-shadow: 0 4px 10px 0 rgba(0,0,0,.2),0 4px 20px 0 rgba(0,0,0,.1);
+  border: 0;
+  font-size: .75rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: .625rem 1.5rem .5rem;
+  text-transform: uppercase;
+  vertical-align: bottom;
+  border-radius: 0.25rem;
+  margin: 10px;
+}
+.btn-blue {
+  background-color: #0C56D0;
+  color: #fff;
+}
+
+.btn-red {
+  background-color: #F80C35;
+  color: #fff;
+}
+
+.btn-green {
+  background-color: #00913B;
+  color: #fff;
+}
+
+.btn-dark {
+  background-color: #131313;
+  color: #fff;
+}
+
+.btn-icon {
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+.icon {
   cursor: pointer;
 }
-/* .MoveButtons {
-  display: none;
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
-tr:hover .MoveButtons {
-  display: block;
-}  */
+i {
+  cursor: pointer;
+}

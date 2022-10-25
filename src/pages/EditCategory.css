@@ -1,0 +1,70 @@
+.editCategory {
+    position: relative;
+    
+}
+
+.editCategory_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    animation: fadeIn 0.3s linear;
+}
+.editCategory_left {
+    border: 3px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.editCategory_right {
+    display: flex;
+    flex-direction: column;
+    width: min(90vw,900px);
+    justify-content: center;
+
+}
+
+.articles_table {
+    max-width: 100%;
+    height: fit-content;
+    align-self: center;
+}
+.editCategory_right_header {
+
+}
+
+.editCategory_right_footer {
+    display: flex;
+    flex-direction: column;
+    width: min(350px,100%);   
+    align-self: center;
+
+}
+
+.articles_table_input {
+    display: block;
+    width: 100%;
+    padding: 10px 8px; 
+    border-radius: 7px;
+    font-size: 18px;
+    transition: var(--transition);
+    color: #4f4f4f;
+}
+
+input[name="price"] {
+    text-align: center;
+    appearance: none;
+}
+
+input[type="number"] {
+    -webkit-appearance: textfield;
+       -moz-appearance: textfield;
+            appearance: textfield;
+  }
+  input[type=number]::-webkit-inner-spin-button, 
+  input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+  }

@@ -5,9 +5,9 @@ import {
   MDBNavbarBrand,
   MDBBtn,
 } from "mdb-react-ui-kit";
-import { logout } from "../firebase";
+import { logout } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../firebase";
+import { auth } from "../../firebase";
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);

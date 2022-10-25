@@ -1,0 +1,54 @@
+.input_container {
+    font-size: calc(.9rem + .4vw);
+    padding: 0 calc(.5rem * 3);
+    margin-top: calc(4 * .5rem);
+    width: 300px;
+
+}
+
+.input, textarea {
+    position: relative; }
+
+.input__label {
+    transform: translate(1.2rem, -75%) scale(.9);
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: calc(.5rem * 0.75) calc(.5rem * .5);
+    margin: calc(.5rem * 0.75 + 3px) calc(.5rem * .5);
+    white-space: nowrap;
+    background: white;
+    transition: var(--transition);
+    color: #4f4f4f;
+}
+.input__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: 2px solid #dbdbdb;
+    padding: calc(.5rem * 1.5) .5rem; 
+    border-radius: 10px;
+    font-size: min(calc(0.9rem + .4vw),16px);
+    transition: var(--transition);
+    transition-property: border;
+    color: #4f4f4f;
+}
+
+.input__field:focus {
+    border: 2px solid #0C56D0;
+}
+.input__field:focus + .input__label {
+    color: #0C56D0;
+    transform: translate(1.2rem, -75%) scale(0.7);
+}
+
+.input__field[name="description"] {
+    min-height: 110px;
+    font-size: inherit;
+    font: inherit;
+    resize: vertical;
+}
+
+.input__field[type="number"] {
+    text-align: left;
+}

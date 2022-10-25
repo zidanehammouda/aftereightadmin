@@ -5,7 +5,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 import { MDBInput, MDBBtn } from "mdb-react-ui-kit";
 import { MDBSpinner } from "mdb-react-ui-kit";
-import Navbar from "../componenets/Navbar";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -25,7 +24,6 @@ const Login = () => {
 
   return (
     <>
-      <Navbar />
       <div class="Container" style={styles.Container}>
         <div style={styles.form}>
           {err && <p class="error">Can't log in</p>}
