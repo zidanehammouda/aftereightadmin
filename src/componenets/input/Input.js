@@ -4,26 +4,28 @@ import "./input.css";
 const Input = ({ InputName, value, LabelText, handleChange, type }) => {
   return (
     <div class="input_container">
-      <label class="input">
-        {type !== "textarea" ? (
-          <input
-            name={InputName}
-            class="input__field"
-            type={type}
-            value={value || ""}
-            onChange={handleChange}
-          />
-        ) : (
-          <textarea
-            name={InputName}
-            class="input__field"
-            type={type}
-            value={value || ""}
-            onChange={handleChange}
-          />
-        )}
-        <span class="input__label">{LabelText}</span>
+      <label class="input__label" for={InputName}>
+        {LabelText}
       </label>
+      {type !== "textarea" ? (
+        <input
+          name={InputName}
+          id={InputName}
+          class="input__field"
+          type={type}
+          value={value || ""}
+          onChange={handleChange}
+        />
+      ) : (
+        <textarea
+          name={InputName}
+          id={InputName}
+          class="input__field"
+          type={type}
+          value={value || ""}
+          onChange={handleChange}
+        />
+      )}
     </div>
   );
 };

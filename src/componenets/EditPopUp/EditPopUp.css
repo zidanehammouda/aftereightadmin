@@ -7,9 +7,6 @@
     height: 100%;
     z-index: 100;
     backdrop-filter: blur(2px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     animation: fadeIn 0.3s linear;
 }
 
@@ -26,9 +23,10 @@ opacity: 0.4;
 }
 
 .EditPopUp_container {
+    position: relative;
     padding: 10px;
     width: min(90vw,700px);
-    border-radius: 10px;
+    border-radius: 4px;
     height: min();
     background-color: white;
     margin: auto;
@@ -36,15 +34,33 @@ opacity: 0.4;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 40px;
     box-shadow: -6px 1px 49px 0px rgba(0,0,0,0.75);
 -webkit-box-shadow: -6px 1px 49px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: -6px 1px 49px 0px rgba(0,0,0,0.75);
 }
 
-.EditPopUp_container .input_container {
-    width: min(400px,90%)
+.EditPopUp_container :is(.input_container,.EditPopUp_NamePriceInputContainer) {
+    width: min(800px,90%)
 }
 
 .EditPopUp_iconX {
     align-self: flex-end;
+}
+
+.EditPopUp_NamePriceInputContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+.EditPopUp_NamePriceInputContainer .input_container:nth-child(2) {
+    width: 20%;
+}
+.EditPopUp_NamePriceInputContainer .input_container:nth-child(1) {
+    width: 70%;
 }

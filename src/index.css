@@ -3,6 +3,7 @@
 html {
   scroll-behavior: smooth;
   font-family: 'Roboto', sans-serif;
+
 }
 :root {
     --color-green: #006600;
@@ -10,6 +11,11 @@ html {
     --color-white: #FFFFFF;
     --color-black: #222224;
     --transition: all 400ms ease;
+    --color-primary: #1266F1;
+    --color-secondary: #006600;
+    --color-dark: #262626;
+    --color-font: #4F4F4F;
+
   }
 
 
@@ -41,7 +47,7 @@ html {
   }
 
   th {
-    background-color: #0C56D0;
+    background-color: var(--color-primary);
     color: white  ;
   }
 tr {
@@ -68,15 +74,15 @@ button {
   border-radius: 0.25rem;
   margin: 10px;
 }
-.btn-blue {
-  background-color: #0C56D0;
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+.btn-secondary {
+  background-color: var(--color-secondary);
   color: #fff;
 }
 
-.btn-red {
-  background-color: #F80C35;
-  color: #fff;
-}
 
 .btn-green {
   background-color: #00913B;
@@ -84,7 +90,7 @@ button {
 }
 
 .btn-dark {
-  background-color: #131313;
+  background-color: var(--color-dark);
   color: #fff;
 }
 
@@ -105,3 +111,8 @@ button {
 i {
   cursor: pointer;
 }
+
+tr {
+  transition: var(--transition);
+}
+

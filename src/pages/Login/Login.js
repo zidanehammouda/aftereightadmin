@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { auth, logInWithEmailAndPassword } from "../firebase";
+import { useNavigate } from "react-router-dom";
+import { auth, logInWithEmailAndPassword } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 import { MDBInput, MDBBtn } from "mdb-react-ui-kit";

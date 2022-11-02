@@ -1,0 +1,21 @@
+nav {
+    position: relative;
+    width: 100%;
+    height: 66px;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,.07),0 2px 4px rgba(0,0,0,.05);
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: fit-content;
+    margin: auto;
+}
+
+nav i {
+    position: absolute;
+    top: 40%;
+    right: 20px;
+    color: #535353;
+    transform: scale(1.4);
+}

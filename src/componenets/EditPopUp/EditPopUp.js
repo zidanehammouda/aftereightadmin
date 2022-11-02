@@ -39,33 +39,37 @@ const EditPopUp = ({
           window.scrollTo(0, scrollPosition);
         }}
       ></div>
-      <div className="EditPopUp_container" ref={myRef}>
-        <FontAwesomeIcon
-          className="icon EditPopUp_iconX"
-          icon="fa-solid fa-xmark"
-          // color="#808080"
-          size="lg"
-          // style={{ marginRight: "10px" }}
+      <div
+        className="EditPopUp_container"
+        ref={myRef}
+        style={{ top: scrollPosition !== 0 ? scrollPosition : "150px" }}
+      >
+        <i
+          class="fa-solid fa-xmark icon EditPopUp_iconX fa-lg"
           onClick={() => {
             UpdateSingleArticle(BakcUpArticle);
             setShowPopUp(-1);
             window.scrollTo(0, scrollPosition);
           }}
-        />
-        <Input
-          InputName="name"
-          value={article.name || ""}
-          LabelText="Name"
-          type="text"
-          handleChange={updateFieldChanged()}
-        />
-        <Input
-          InputName="price"
-          value={article.price || ""}
-          LabelText="Price"
-          type="number"
-          handleChange={updateFieldChanged()}
-        />
+        ></i>
+
+        <div className="EditPopUp_NamePriceInputContainer">
+          <Input
+            InputName="name"
+            value={article.name || ""}
+            LabelText="Name"
+            type="text"
+            handleChange={updateFieldChanged()}
+          />
+          <Input
+            style={{ width: "30%" }}
+            InputName="price"
+            value={article.price || ""}
+            LabelText="Price"
+            type="number"
+            handleChange={updateFieldChanged()}
+          />
+        </div>
         <Input
           InputName="description"
           value={article.description || ""}
@@ -83,7 +87,10 @@ const EditPopUp = ({
         <div class="EditPopUp_footer">
           <button
             className="btn btn-green"
-            onClick={() => UpdateSingleArticle(article)}
+            onClick={() => {
+              UpdateSingleArticle(article);
+              setShowPopUp(-1);
+            }}
           >
             Save
           </button>
