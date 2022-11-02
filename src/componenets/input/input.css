@@ -9,11 +9,11 @@
 
 
 .input__label {
-    padding: 0 8px;
+    padding: 0;
     white-space: nowrap;
     transition: var(--transition);
     color: var(--color-primary);
-    font-size: 14px;
+    font-size: 16px;
 }
 .input__field {
     width: 100%;

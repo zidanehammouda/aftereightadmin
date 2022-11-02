@@ -1,0 +1,22 @@
+
+.login {
+    margin-top: 100px;
+    width: 100%;
+  }
+  .login_container {
+    margin: auto;
+    width: min(400px,80vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  @keyframes spinner {
+    0% {transform: rotate(0);}
+    100% {transform: rotate(360deg);}
+  }
+
+  .login i {
+    animation: spinner 0.6s infinite;
+  }

@@ -7,8 +7,8 @@ import Navbar from "./componenets/Navbar/Navbar";
 function App() {
   return (
     <>
-      <Navbar />
       <Router>
+        <Navbar />
         <Routes>
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/" element={<Home />} />
