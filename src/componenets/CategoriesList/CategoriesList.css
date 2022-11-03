@@ -3,5 +3,9 @@
     margin: auto;
     margin-top: 20px;
     vertical-align: middle;
+    background-color: white;
+    box-shadow: -4px 5px 61px -37px rgba(0,0,0,0.5);
+-webkit-box-shadow: -4px 5px 61px -37px rgba(0,0,0,0.5);
+-moz-box-shadow: -4px 5px 61px -37px rgba(0,0,0,0.5);
 }
 

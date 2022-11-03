@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { auth, logInWithEmailAndPassword } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-import { MDBSpinner } from "mdb-react-ui-kit";
-
 import "./Login.css";
 
 import Input from "../../componenets/input/Input";

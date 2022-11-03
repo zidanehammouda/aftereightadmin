@@ -12,8 +12,8 @@ const EditCategoryTable = ({
     <table className="articles_table">
       <thead>
         <tr>
-          <th style={{ width: "5%" }}></th>
-          <th style={{ width: "55%" }}>Article</th>
+          <th style={{ width: "10%" }}></th>
+          <th style={{ width: "50%" }}>Article</th>
           <th style={{ width: "20%" }}>Price</th>
           <th style={{ width: "10%" }}></th>
           <th style={{ width: "10%" }}></th>

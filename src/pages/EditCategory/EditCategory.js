@@ -119,10 +119,9 @@ const EditCategory = () => {
 
       <div className="editCategory_left">
         <img
-          className="img-fluid shadow-2-strong"
+          className="editCategory_left_img"
           src={category.image_url}
           alt={category.name}
-          style={{ width: "60%", marginBottom: "40px" }}
         />
         <Input
           value={name}
