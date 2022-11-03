@@ -13,9 +13,9 @@
     padding: 60px 20px;
     background-color: white;
 
-    box-shadow: -4px 5px 31px -4px rgba(0,0,0,0.75);
--webkit-box-shadow: -4px 5px 31px -4px rgba(0,0,0,0.75);
--moz-box-shadow: -4px 5px 31px -4px rgba(0,0,0,0.75);
+    box-shadow: -4px 5px 61px -37px rgba(0,0,0,0.5);
+    -webkit-box-shadow: -4px 5px 61px -37px rgba(0,0,0,0.5);
+    -moz-box-shadow: -4px 5px 61px -37px rgba(0,0,0,0.5);
 
   }
 
