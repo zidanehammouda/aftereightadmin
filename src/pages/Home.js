@@ -17,9 +17,9 @@ export default function Home() {
 
   useEffect(() => {
     if (loading) return;
-    if (!user) return navigate("/login");
+    if (!user) return navigate("/");
     if (user.email !== "after@eight.com") {
-      console.log(user.email);
+      // console.log(user.email);
       setAllowed(true);
     }
   }, [user, loading]);
@@ -28,9 +28,5 @@ export default function Home() {
     fetchData(setData);
   }, []);
 
-  return (
-    <>
-      <CatgoriesList data={data} isAllowed={isAllowed} />;
-    </>
-  );
+  return <>{user && <CatgoriesList data={data} isAllowed={isAllowed} />};</>;
 }

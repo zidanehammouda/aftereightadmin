@@ -26,7 +26,6 @@ const Navbar = () => {
           class="fa-solid fa-right-from-bracket"
           onClick={() => {
             logout();
-            setTimeout(() => navigate("/"), 1000);
           }}
         ></i>
       )}

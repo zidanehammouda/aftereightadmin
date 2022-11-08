@@ -8,6 +8,8 @@ import PopUpMessage from "../../componenets/PopUpMessage/PopUpMessage";
 import Input from "../../componenets/input/Input";
 import EditPopUp from "../../componenets/EditPopUp/EditPopUp";
 import EditCategoryFooter from "../../componenets/EditCategoryFooter/EditCategoryFooter";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase";
 
 import "./EditCategory.css";
 
@@ -20,7 +22,17 @@ const EditCategory = () => {
   const [ShowPopUp, setShowPopUp] = useState(-1);
   const [PopUp, setPopUp] = useState(false);
   const navigate = useNavigate();
-  console.log(Articles);
+
+  const [user] = useAuthState(auth);
+  // console.log(Articles);
+
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
+
+  useEffect(() => {
+    if (!user) return navigate("/");
+  }, [user]);
 
   useEffect(() => {
     document.addEventListener("wheel", function (event) {
@@ -74,7 +86,6 @@ const EditCategory = () => {
   };
 
   const UpdateSingleArticle = (newArticle) => {
-    console.log("about to change one article");
     const newArticles = Articles;
     newArticles[ShowPopUp] = newArticle;
     setArticles(newArticles);
@@ -98,7 +109,7 @@ const EditCategory = () => {
           setPopUp(true);
           setTimeout(() => setPopUp(false), 2000);
         } else {
-          setTimeout(() => navigate("/"), 1000);
+          setTimeout(() => navigate("/home"), 1000);
         }
       }
     );
@@ -142,7 +153,7 @@ const EditCategory = () => {
           <button
             className="btn btn-primary"
             type="submit"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/home")}
           >
             <i className="fa-solid fa-angles-left"></i>
           </button>

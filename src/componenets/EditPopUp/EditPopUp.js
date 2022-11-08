@@ -29,6 +29,19 @@ const EditPopUp = ({
     });
   }, []);
 
+  useEffect(() => {
+    document.addEventListener("wheel", function (event) {
+      if (
+        document.activeElement.type === "number" &&
+        document.activeElement.classList.contains("noscroll")
+      ) {
+        document.activeElement.blur();
+      }
+    });
+
+    return () => {};
+  }, []);
+
   return (
     <div class="EditPopUp">
       <div

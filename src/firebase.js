@@ -28,7 +28,6 @@ const logInWithEmailAndPassword = async (email, password) => {
       signInWithEmailAndPassword(auth, email, password)
     );
   } catch (err) {
-    console.error(err);
     return err;
   }
 };

@@ -4,30 +4,48 @@
     display: flex;
     flex-direction: column;
     gap: 0;
+    position: relative;
 }
 
 
 
 .input__label {
-    padding: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(1) translateY(-50%) translateX(10px);
     white-space: nowrap;
     transition: var(--transition);
-    color: var(--color-primary);
+    color: rgb(96, 96, 96);
     font-size: 16px;
+    background-color: white;
+    cursor:text;
+    background-clip: content-box;
 }
+
+
+.input__label.label_value, .input_container:focus-within > .input__label {
+    color: var(--color-primary);
+    transform: scale(0.8) translateY(-50%) translateX(10px);
+}
+
+
 .input__field {
     width: 100%;
-    border-bottom: 2px solid #dbdbdb;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
     padding: 12px 8px; 
     font-size: 16px;
     transition: var(--transition);
     transition-property: border;
     color: var(--color-font);
+    background-color: white;
 }
 
 .input__field:focus {
-    border-bottom: 2px solid var(--color-primary)
+    border: 1px solid var(--color-primary);
 }
+
 
 
 .input__field[name="description"] {
@@ -36,3 +54,11 @@
     resize: vertical;
 }
 
+
+
+/* input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+} */

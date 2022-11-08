@@ -11,45 +11,65 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [password, setPassword] = useState("");
-  const [err, setErr] = useState(false);
+  const [err, setErr] = useState(-1);
   const [user, error] = useAuthState(auth);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user) navigate("/");
+    if (user) navigate("/home");
   }, [user, loading]);
 
   return (
     <>
       <div className="login">
         <div className="login_container">
-          {err && <p class="error">Can't log in</p>}
+          <span className="login_container_text">Login</span>
+          <div className="error_container">
+            {err !== -1 && (
+              <span className="error">
+                {err === 0
+                  ? "Wrong credentials!"
+                  : "Failed to connect. Please try again later"}
+              </span>
+            )}
+          </div>
 
-          <Input
-            id={email}
-            InputName={email}
-            handleChange={(e) => setEmail(e.target.value)}
-            LabelText="Email"
-            type="email"
-            value={email}
-          />
-          <Input
-            id={password}
-            InputName={password}
-            handleChange={(e) => setPassword(e.target.value)}
-            LabelText="Password"
-            type="password"
-            value={password}
-          />
+          <form>
+            <Input
+              id="Email"
+              InputName={email}
+              handleChange={(e) => setEmail(e.target.value)}
+              LabelText="Email"
+              type="email"
+              value={email}
+            />
+            <Input
+              id="Password"
+              InputName={password}
+              handleChange={(e) => setPassword(e.target.value)}
+              LabelText="Password"
+              type="password"
+              value={password}
+            />
+          </form>
 
           <button
             className="btn btn-primary"
             onClick={() => {
               setLoading(true);
-              setTimeout(() => setLoading(false), 1000);
+              // setTimeout(() => setLoading(false), 1000);
               logInWithEmailAndPassword(email, password).then((result) => {
-                if (result) setErr(true);
+                if (
+                  Object.values(result)[0] === "auth/user-not-found" ||
+                  Object.values(result)[0] === "auth/wrong-password"
+                ) {
+                  setErr(-1);
+                  setErr(0);
+                } else {
+                  setErr(1);
+                }
+                setLoading(false);
               });
             }}
           >
