@@ -20,7 +20,7 @@ const CatgoriesList = (props) => {
               <img
                 width="80px"
                 height="80px"
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "cover", overflow: "hidden" }}
                 src={element.image_url}
                 alt={element.name}
               />

@@ -173,6 +173,7 @@ const EditCategory = () => {
           key={category.id}
           onDragEnd={onDragEnd}
           Articles={Articles}
+          setArticles={setArticles}
           updateFieldChanged={updateFieldChanged}
           setShowPopUp={setShowPopUp}
           deleteArticle={deleteArticle}

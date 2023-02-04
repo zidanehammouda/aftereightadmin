@@ -4,6 +4,7 @@ import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 const EditCategoryTable = ({
   onDragEnd,
   Articles,
+  setArticles,
   updateFieldChanged,
   setShowPopUp,
   deleteArticle,
@@ -38,7 +39,9 @@ const EditCategoryTable = ({
                         boxShadow: snapshot.isDragging
                           ? "0 0 .4rem #666"
                           : "none",
+                        position: "relative",
                       }}
+                      className="table-row"
                     >
                       <td className="Movebuttons">
                         <i
@@ -81,6 +84,18 @@ const EditCategoryTable = ({
                           style={{ color: "var(--color-dark)" }}
                         ></i>
                       </td>
+                      <div
+                        className="table-row-add"
+                        onClick={() =>
+                          setArticles((prev) => {
+                            let array = [...prev];
+                            array.splice(index + 1, 0, {});
+                            return array;
+                          })
+                        }
+                      >
+                        <i class="fa-solid fa-circle-plus"></i>
+                      </div>
                     </tr>
                   )}
                 </Draggable>
